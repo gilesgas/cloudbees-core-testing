@@ -3,7 +3,7 @@ pipeline {
   stages {
     stage('Trigger') {
       steps {
-        publishEvent(event: '{event:"generic://eventName"}')
+        publishEvent(event: '{generic://eventName}')
       }
     }
   }
