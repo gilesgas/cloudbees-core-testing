@@ -3,8 +3,11 @@ pipeline {
   stages {
     stage('Trigger') {
       steps {
-        publishEvent(event: 'simpleEvent(\'eventTrigger\')')
+        echo 'Received eventTrigger'
       }
     }
+  }
+  triggers {
+    eventTrigger(simpleMatch('eventTrigger'))
   }
 }
