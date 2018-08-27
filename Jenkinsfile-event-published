@@ -1,0 +1,11 @@
+pipeline {
+    agent any
+    stages {
+        stage('Trigger') {
+            steps {
+                echo 'Sending eventTrigger'
+                publishEvent simpleEvent('eventTrigger')
+            }
+        }
+    }
+}

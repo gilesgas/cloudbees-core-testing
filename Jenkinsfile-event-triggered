@@ -1,0 +1,14 @@
+pipeline {
+    agent any
+    triggers {
+        // eventTrigger event(generic('eventTrigger'))
+        eventTrigger simpleMatch('eventTrigger')
+    }
+    stages {
+        stage('Trigger') {
+            steps {
+                echo 'Received eventTrigger'
+            }
+        }
+    }
+}
